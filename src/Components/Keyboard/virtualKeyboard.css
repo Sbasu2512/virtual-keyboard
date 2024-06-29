@@ -1,0 +1,40 @@
+.keyboard_row {
+  display: flex;
+  align-self: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.margin_1 {
+  margin: 1rem;
+}
+
+.ml_02 {
+  margin-left: 0.2rem;
+}
+
+.mr_02 {
+  margin-right: 0.2rem;
+}
+
+.p_05 {
+  padding: 0.5rem;
+}
+
+.button_styles {
+  margin-right: 0.2rem;
+  padding: 1rem;
+  color: white;
+  background-color: grey;
+}
+
+.button_styles_clicked {
+  margin-right: 0.2rem;
+  padding: 1rem;
+  color: white;
+  background-color: black;
+}
