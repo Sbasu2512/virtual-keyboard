@@ -14,8 +14,8 @@ const DraggablePopover = ({
   const calculatePosition = () => {
     if (position) {
       return {
-        x: position.x || 0,
-        y: position.y || 0,
+        x: position.horizontal || 0,
+        y: position.vertical || 0,
       };
     } else if (anchorElement) {
       const anchorRect = anchorElement.getBoundingClientRect();

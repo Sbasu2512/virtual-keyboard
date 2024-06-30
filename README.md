@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Virtual Keyboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a hookable virtual keyboard which can be used in react applications.
 
-## Available Scripts
+# About me
+Hello, My name is Sayantan Basu. I am a new software developer. After I saw a lack of virtual keyboards for react, I decided to take a shot and create a npm package myself.
 
-In the project directory, you can run:
+# Documentation
 
-### `npm start`
+Props the keyboard can be passed to.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. *show* This prop is used to show keyboard. It must be a boolean state.
+Usage:
+```js
+const [showKeyboard, setShowKeyboard] = useState(false);
+ <VirtualKeyboard
+    show={openVk}
+ />
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. *output* This function captures the output from the keyboard. It needs to be a function.
+Usage:
+```js
+const onKeyPress = (btn) => {
+    console.log(btn)
+}
 
-### `npm test`
+ <VirtualKeyboard
+    output={onKeyPress}
+/>
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. *onClose* This prop is used to hide/close the keyboard. You need to pass a function which manipulates the same state. 
+Usage:
+```js
+const [showKeyboard, setShowKeyboard] = useState(false);
+ 
+ const handleclose = () => {
+    setShowKeyboard(false);
+  }
 
-### `npm run build`
+ <VirtualKeyboard
+    onClose={handleclose}
+ />
+ ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. *layoutName* The layout you want, default or Upper. 
+Usage:
+```js
+<VirtualKeyboard
+        layoutName="default"
+/>
+ ```   
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. *changeButtonsDisplay* If you want to show certain buttons in a more user friendly way. It need to be an object as shown in the example.
+```js
+<VirtualKeyboard
+        changeButtonsDisplay={{'bksp': 'backspace',
+                                'enter': '< enter',
+                                '@': 'at',
+                                "space":"spacebar"
+                              }}
+  />
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. *anchor* The position where the keyboard will show up. It can be numbers or pixels.
+Usage
+```js
+<VirtualKeyboard
+        anchor={
+            "horizontal":350,
+            "vertical": 200,
+        }
+  />
+ 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

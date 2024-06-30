@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import KeyboardContainer from './Components/Keyboard/keyboardContainer';
+import VirtualKeyboard from './Components/Keyboard/keyboardContainer';
 
 function App() {
 
@@ -41,14 +41,14 @@ function App() {
       <div>
         <p>Input text</p>
         <input type="text" name="dummy1" value={dum} onChange={handleChange} onClick={handleClick} />
-        <KeyboardContainer
-        show={openVk}
-        output={onKeyPress}
-        onClose={closeVK}
-        layoutName={layoutName}
+        <VirtualKeyboard
         changeButtonsDisplay={{'{bksp}': 'backspace',
   '{enter}': '< enter',
   '@': 'at',"{space}":"space"}}
+        layoutName={layoutName}
+        onClose={closeVK}
+        show={openVk}
+        output={onKeyPress}
         />
       </div>
     </div>

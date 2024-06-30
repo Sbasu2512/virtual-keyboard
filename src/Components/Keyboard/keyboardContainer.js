@@ -12,7 +12,7 @@ import Keyboard from './index';
 * @param {*} changeButtonsDisplay If you want to show certain buttons in a more user friendly way
  */
 
-const KeyboardContainer = forwardRef(function KeyboardContainer(
+const VirtualKeyboard = forwardRef(function KeyboardContainer(
   {
     show,
     output,
@@ -59,4 +59,4 @@ const KeyboardContainer = forwardRef(function KeyboardContainer(
   );
 });
 
-export default KeyboardContainer;
+export default VirtualKeyboard;
