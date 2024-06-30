@@ -1,7 +1,7 @@
 .popover {
   position: fixed;
-  background-color: rgb(31, 34, 51);
-  border: 1px solid rgb(53, 84, 255);
+  background-color: #ececec;
+  border: 1px solid #000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   padding: 10px;
   z-index: 999; /* Ensure popover appears above other content */
@@ -17,7 +17,7 @@
 .popover_header h3 {
   margin: 0;
   font: inherit;
-  color: #fff;
+  color: #000;
 }
 
 .popover_body {
@@ -27,6 +27,6 @@
 .close_btn {
   float: right;
   border: none;
-  color: #fff;
+  color: #000;
   background-color: inherit;
 }

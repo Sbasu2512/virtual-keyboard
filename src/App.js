@@ -7,6 +7,7 @@ function App() {
   const [dum, setd] = useState("");
   const [openVk, setOpenVK] = useState(false);
   const [input, setInputName] = useState("");
+  const [layoutName, setLayoutName] = useState("default")
 
   const handleChange = (e) => {
     setd(e.target.value)
@@ -20,7 +21,10 @@ function App() {
   }
 
   const onKeyPress=(btn)=>{
-    console.log(btn);
+    if(btn === "{shift}"){
+      const ln = layoutName === "default"? "Upper":"default";
+      setLayoutName(ln)
+    }
     const e = {target:{name: input, value:btn}}
     handleChange(e);
   }
@@ -38,9 +42,13 @@ function App() {
         <p>Input text</p>
         <input type="text" name="dummy1" value={dum} onChange={handleChange} onClick={handleClick} />
         <KeyboardContainer
-        showKeyboard={openVk}
+        show={openVk}
         output={onKeyPress}
         onClose={closeVK}
+        layoutName={layoutName}
+        changeButtonsDisplay={{'{bksp}': 'backspace',
+  '{enter}': '< enter',
+  '@': 'at',"{space}":"space"}}
         />
       </div>
     </div>
