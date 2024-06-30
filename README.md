@@ -12,7 +12,7 @@ Hello, My name is Sayantan Basu. I am a new software developer. After I saw a la
 To use it you can just import it
 
 ```js
-import VirtualKeyboard from './Components/Keyboard/keyboardContainer';
+import VirtualKeyboard from 'virtual-keyboard';
 
 function App(){
 

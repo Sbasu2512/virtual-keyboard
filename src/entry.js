@@ -1,3 +1,3 @@
-import KeyboardContainer from './Components/Keyboard/keyboardContainer';
+import VirtualKeyboard from './Components/Keyboard/keyboardContainer';
 
-export { KeyboardContainer };
+export { VirtualKeyboard };
