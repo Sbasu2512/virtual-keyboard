@@ -1,0 +1,37 @@
+# Prevent these from being published to npm
+# Build output should be in /dist
+
+# Dependencies & configs
+node_modules
+babel.config.js
+rollup.config.js
+vite.config.*
+.env*
+.eslint*
+*.log
+
+# Dev files
+src/**/*.test.*
+src/__tests__/
+demo/
+App.js
+App.css
+README-dev.md
+public/
+
+# System files
+.DS_Store
+
+# CRA leftovers (if any)
+build/
+coverage/
+
+# Source (optional, if only publishing compiled dist/)
+src/
+
+.babelrc
+*.ts
+*.tsx
+*.json
+*.md
+*.test.*

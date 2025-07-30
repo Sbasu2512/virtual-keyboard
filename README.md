@@ -4,42 +4,26 @@ This is a hookable virtual keyboard which can be used in react applications.
 
 ![Virtual Keyboard Preview](https://github.com/Sbasu2512/virtual-keyboard/blob/master/images/virtual_keyboard.png)
 
-# About me
-Hello, My name is Sayantan Basu. I am a new software developer. After I saw a lack of virtual keyboards for react, I decided to take a shot and create a npm package myself.
-
 # Documentation
 
 To use it you can just import it
 
 ```js
-import VirtualKeyboard from 'virtual-keyboard';
+import { VirtualKeyboard } from 'virtual-keyboard';
 
-function App(){
-
- const [showKeyboard, setShowKeyboard] = useState(false);
-
- const handleClick = () => {
-    setShowKeyboard(true);
- }
- 
- const handleclose = () => {
-    setShowKeyboard(false);
-  }
-
-    return (
-    <div className="App">
-      <div onclick={handleClick}>
-        <VirtualKeyboard
-        show={showKeyboard}
-        onClose={handleclose}
-        layoutName={layoutName}
-        output={onKeyPress}
-        />
-      </div>
-    </div>
-  );
-}
-
+<VirtualKeyboard
+  show={true}
+  output={(key) => console.log(key)}
+  onClose={() => {}}
+  layoutName="default"
+  changeButtonsDisplay={{
+    '{bksp}': 'Backspace',
+    '{enter}': 'Enter',
+    '{space}': 'Space',
+  }}
+  anchor={document.querySelector('input')}
+  ref={someRef}
+/>
 ```
         
 
@@ -113,5 +97,14 @@ Usage
             "vertical": 200,
         }
   />
- 
+  ```
+ or
+ ```js
+ anchor={document.querySelector('input')}
+ ```
 
+# Installation
+
+```bash
+npm install @sayantan2512/react-virtual-keyboard
+```

@@ -1,7 +1,5 @@
-import React from 'react';
-import Draggable from 'react-draggable';
-import { AiOutlineDrag } from "react-icons/ai";
-import  './popover.css'; // Import your CSS for styling
+import React from "react";
+import "./popover.css";
 
 const DraggablePopover = ({
   open,
@@ -14,38 +12,41 @@ const DraggablePopover = ({
   const calculatePosition = () => {
     if (position) {
       return {
-        x: position.horizontal || 0,
-        y: position.vertical || 0,
+        left: position.horizontal || 0,
+        top: position.vertical || 0,
       };
     } else if (anchorElement) {
       const anchorRect = anchorElement.getBoundingClientRect();
       return {
-        x: anchorRect.left,
-        y: anchorRect.bottom,
+        left: anchorRect.left,
+        top: anchorRect.bottom,
       };
     } else {
-      return { x: 0, y: 0 };
+      return { left: 0, top: 0 };
     }
+  };
+
+  const style = {
+    position: "absolute",
+    ...calculatePosition(),
   };
 
   return (
     <>
       {open && (
-        <Draggable defaultPosition={calculatePosition()}>
-          <div className="popover">
-            <div style={{display:'flex', justifyContent:'space-between'}}>
+        <div className="popover" style={style}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className="popover_header">
-              {header ? <h3>{header}</h3> : <></>}
+              {header ? <h3>{header}</h3> : null}
             </div>
             <div className="handle">
               <button className="close_btn" onClick={onClose}>
                 X
               </button>
             </div>
-            </div>
-            <div className="popover_body">{children}</div>
           </div>
-        </Draggable>
+          <div className="popover_body">{children}</div>
+        </div>
       )}
     </>
   );
