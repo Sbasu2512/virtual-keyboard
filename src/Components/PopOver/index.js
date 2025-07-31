@@ -36,9 +36,11 @@ const DraggablePopover = ({
       {open && (
         <div className="popover" style={style}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div className="popover_header">
-              {header ? <h3>{header}</h3> : null}
-            </div>
+            {header && (
+              <div className="popover_header">
+                <h3>{header}</h3>
+              </div>
+            )}
             <div className="handle">
               <button className="close_btn" onClick={onClose}>
                 X

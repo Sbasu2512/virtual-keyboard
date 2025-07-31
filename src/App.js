@@ -26,7 +26,7 @@ function App() {
       return;
     }
 
-    setInputValue((prev) => prev + btn); // Append input
+    setInputValue((prev) => prev + btn);
   };
 
   const handleVKClose = () => {

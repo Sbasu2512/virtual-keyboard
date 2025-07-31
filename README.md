@@ -4,7 +4,7 @@ This is a hookable virtual keyboard which can be used in react applications.
 
 ![Virtual Keyboard Preview](https://github.com/Sbasu2512/virtual-keyboard/blob/master/images/virtual_keyboard.png)
 
-# Documentation
+## Documentation
 
 To use it you can just import it
 
@@ -25,12 +25,12 @@ import { VirtualKeyboard } from 'virtual-keyboard';
   ref={someRef}
 />
 ```
-        
 
 Props the keyboard can be passed to.
 
 1. *show* This prop is used to show keyboard. It must be a boolean state.
 Usage:
+
 ```js
 const [showKeyboard, setShowKeyboard] = useState(false);
  <VirtualKeyboard
@@ -45,6 +45,7 @@ const [showKeyboard, setShowKeyboard] = useState(false);
 
 2. *output* This function captures the output from the keyboard. It needs to be a function.
 Usage:
+
 ```js
 const onKeyPress = (btn) => {
     console.log(btn)
@@ -55,8 +56,9 @@ const onKeyPress = (btn) => {
 />
 ```
 
-3. *onClose* This prop is used to hide/close the keyboard. You need to pass a function which manipulates the same state. 
+3. *onClose* This prop is used to hide/close the keyboard. You need to pass a function which manipulates the same state.
 Usage:
+
 ```js
 const [showKeyboard, setShowKeyboard] = useState(false);
  
@@ -69,15 +71,17 @@ const [showKeyboard, setShowKeyboard] = useState(false);
  />
  ```
 
-4. *layoutName* The layout you want, default or Upper. 
+4. *layoutName* The layout you want, default or Upper.
 Usage:
+
 ```js
 <VirtualKeyboard
         layoutName="default"
 />
- ```   
+ ```
 
 5. *changeButtonsDisplay* If you want to show certain buttons in a more user friendly way. It need to be an object as shown in the example.
+
 ```js
 <VirtualKeyboard
         changeButtonsDisplay={{'bksp': 'backspace',
@@ -90,6 +94,7 @@ Usage:
 
 6. *anchor* The position where the keyboard will show up. It can be numbers or pixels.
 Usage
+
 ```js
 <VirtualKeyboard
         anchor={
@@ -98,13 +103,32 @@ Usage
         }
   />
   ```
+
  or
+
  ```js
  anchor={document.querySelector('input')}
  ```
 
-# Installation
+7. *title*: If user wants to show any title for the keyboard
+Usage
+
+```js
+<VirtualKeyboard
+  title={My Keyboard}
+/>
+```
+
+## Installation
 
 ```bash
 npm install @sayantan2512/react-virtual-keyboard
 ```
+
+## Contact
+
+For feature requests, bug reports, or any other inquiries regarding this project, please open an issue on the official GitHub repository:
+
+[Issues](https://github.com/Sbasu2512/virtual-keyboard/issues)
+
+We appreciate your feedback and will review all submissions diligently.

@@ -1,12 +1,30 @@
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import Popover from "../PopOver";
 import Keyboard from "./index";
 
 const VirtualKeyboard = forwardRef(function KeyboardContainer(
-  { show, output, anchor, onClose, layoutName, changeButtonsDisplay },
+  {
+    show,
+    output,
+    anchor,
+    onClose,
+    layoutName,
+    changeButtonsDisplay,
+    title,
+    isTouch = false,
+  },
   ref
 ) {
   const keyboard = useRef();
+  const [showKeyboard, setShowKeyboard] = useState(false);
+
+  useEffect(() => {
+    if (isTouch) {
+      setShowKeyboard(isTouchDevice() ? show : null);
+    } else {
+      setShowKeyboard(show);
+    }
+  }, [show, isTouch]);
 
   const onKeyPress = (btn) => {
     if (output) {
@@ -24,10 +42,10 @@ const VirtualKeyboard = forwardRef(function KeyboardContainer(
 
   return (
     <Popover
-      open={show}
+      open={showKeyboard}
       onClose={onClose}
       position={anchor}
-      header={"Virtual Keyboard"}
+      header={title}
       anchorElement={ref}
     >
       <div>
